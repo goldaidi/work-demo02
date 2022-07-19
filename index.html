@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eecb5127e2.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+			box-sizing: border-box;
+			font-family: "微軟正黑體",'Roboto', sans-serif;
+		}
+        body {
+            overflow-x: hidden;
+            margin: 0;
+			padding: 0;
+        }
+		img {
+			max-width: 100%;
+			height: auto;
+			/* vertical-align: middle; */
+		}
+        .element_spaceM {
+            margin-bottom: 50px !important;
+        }
+        .element_spaceL {
+            margin-bottom: 100px !important;
+        }
+        .font-white {
+            color: #fff;
+        }
+        .font-black {
+            color: #000;
+        }
+        .largetxt {
+			/* font-weight: 600; */
+		  	font-size: 3.375rem;
+			margin-bottom: 1rem;
+		}
+        .mediumtxt {
+			/* font-weight: 600; */
+		  	font-size: 2.625rem;
+			margin-bottom: 1rem;
+		}
+        .smalltxt {
+			/* font-weight: 600; */
+		  	font-size: 1.875rem;
+			margin-bottom: 1rem;
+		}
+        .subtitleL {
+		  	font-size: 30px;
+            margin-bottom: 0.5rem;
+        }
+        .subtitleM {
+		  	font-size: 24px;
+            margin-bottom: 0.5rem;
+        }
+        .subtitleS {
+		  	font-size: 18px;
+            margin-bottom: 0.5rem;
+        }
+        .subtitleSS {
+		  	font-size: 16px;
+            margin-bottom: 0.5rem;
+            text-indent: 1.75rem;
+        }
+        .detailtxt {
+            color:#444;
+            font-size: 14px;
+            margin:0;
+        }
+        .hrline {
+            height: 1px;
+            border-width: 0;
+            background-color: #444;
+            width: 50%;
+            margin: 50px 0 30px;
+        }
+        .central_icon {
+            color: #006cf0;
+            padding: 5px;
+            font-size: 1.5rem;
+        }
+        ul.central_list {
+            list-style-type: none;
+            font-size: 1.25rem;
+            padding: 0;
+        }
+        ul.central_list li {
+            margin-bottom: 16px;
+        }
+        @media print, screen and (max-width:600px) {
+            .largetxt {
+                /* font-weight: 600; */
+                font-size: 2.25rem;
+                margin-bottom: 0.75rem;
+            }
+            .mediumtxt {
+                /* font-weight: 600; */
+                font-size: 1.75rem;
+                margin-bottom: 0.5rem;
+            }
+            .smalltxt {
+                /* font-weight: 600; */
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            .subtitleL {
+                font-size: 22px;
+                margin-bottom: 0.25rem;
+            }
+            .subtitleM {
+                font-size: 18px;
+                margin-bottom: 0.25rem;
+            }
+            .subtitleS {
+                font-size: 16px;
+                margin-bottom: 0.25rem;
+            }
+            .subtitleSS {
+                font-size: 14px;
+                text-indent: 1.75rem;
+            }
+            .detailtxt {
+                color:#444;
+                font-size: 14px;
+                margin:0;
+            }
+        }
+
+        /* layout */
+        .all_flex {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .all_wrap {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+		}
+        .all_itemL {
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+        .all_itemM {
+            width: 900px;
+            height: auto;
+            margin: 0 auto;
+        }
+        .toolimgL {
+            width:800px;
+            height:auto;
+        }
+        .toolimgM {
+            width:500px;
+            height:auto;
+        }
+        .item_half {
+			width:600px;
+            padding: 0px;
+		}
+        @media print, screen and (max-width:1200px) {
+            .all_itemL {
+                width: 1000px;
+            }
+            .toolimgL {
+                width:100%;
+            }
+            .toolimgM {
+                width:400px;
+            }
+            .item_half {
+                width:500px;
+            }
+        }
+        @media print, screen and (max-width:1000px) {
+            .all_itemL {
+                width: 700px;
+            }
+            .toolimgL {
+                width:100%;
+            }
+            .toolimgM {
+                width:45%;
+            }
+            .item_half {
+                width:50%;
+            }
+        }
+        @media print, screen and (max-width:700px) {
+            .all_itemL {
+                width: 95%;
+            }
+            .toolimgL {
+                width:100%;
+            }
+            .toolimgM {
+                width:100%;
+            }
+            .item_half {
+                width:100%;
+            }
+        }
+        @media print, screen and (max-width:600px) {
+            .toolimgM {
+                order: -1;
+            }
+        }
+
+        /* section1 */
+        .bg_black {
+            background: url('images/blue-vertical-strip.svg') no-repeat center 12% #0d0d0e;
+        }
+        .headbg {
+            background-image: url(images/Ecosystem-central-banner.svg);
+            background-repeat: no-repeat;
+            background-position: calc(50% + 310px) bottom;
+            padding: 100px 0 50px;
+            background-size: 600px auto;
+            margin-bottom: 50px;
+        }
+
+        /* section2-3 */
+        .w50 {
+            width: 50%;
+        }
+        .btnlink {
+            border: 1px solid #005ac8;
+            background-color: initial;
+            padding: 6px 12px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .btnlink a {
+            color: #005ac8;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+        .btnlink:hover {
+            background-color: #005ac8;
+        }
+        .btnlink:hover a {
+            color: #fff;
+        }
+        @media print, screen and (max-width:700px) {
+            ul.central_list li {
+                width: 100%;
+            }
+        }
+        @media print, screen and (max-width:600px) {
+            .btnlink a {
+                font-size: 1rem;
+            }
+        }
+        
+        /* section4 */
+        .list_space {
+            margin-left: 16px;
+        }
+        .imgS {
+            width: 50px;
+        }
+        @media print, screen and (max-width:600px) {
+            .imgS {
+                width: 30px;
+            }
+        }
+
+        /* section5 */
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: inline-block;
+            background-color: inherit;
+            padding: 12px 25px;
+            margin: 4px 0;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: rgba(221, 221, 221, 0.1);
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #ccc;
+            color: #000;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            padding: 0px 12px;
+        }
+
+        .flex-1 {
+            /* flex: 1; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 8px;
+        }
+        .flex-2 {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0 16px;
+        }
+        .mobilesize {
+            display: none;
+        }
+        @media print, screen and (max-width:600px) {
+            .desktopsize {
+                display: none !important;
+            }
+            /* mobile */
+            .mobilesize {
+                display: block;
+            }
+            .accordion  {
+                width : 300px;
+                margin : 0 auto 0;
+            }
+            .accordion  label {
+                display : block;
+                width : 100%;
+                text-align : center;
+                border-radius : 3px;
+                background-color : #2b2b2b;
+                margin-top : 10px;
+                padding : 6px 12px;
+                cursor : pointer;
+            }
+            .sophos_content {
+                height : 0px;
+                background-color : #111;
+                overflow : hidden;
+                transition : 0.5s;
+                padding: 0 5px;
+            }
+            input[type=radio]:checked + .sophos_content {
+                height : auto;
+            }
+            input[type=radio] {
+                display : none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg_black">
+        <section class="all_itemL headbg font-white">
+            <div>
+                <h1 class="largetxt">Sophos Central 管理和報告</h1>
+                <p class="mediumtxt">終極網路安全雲平台</p>
+                <p>為所有 Sophos Firewall 和其他 Sophos 產品提供免費輕鬆的管理和報告。</p>
+            </div>
+        </section>
+        
+        <section class="all_itemL font-white element_spaceL">
+            <div class="all_wrap">
+                <div class="item_half">
+                    <h2 class="largetxt">掌握最新資訊</h2>
+                    <p class="smalltxt">Sophos Central 支持您通過便捷概觀儀表板訊息，全面掌握最新資訊。</p>
+                </div>
+                <div class="toolimgM">
+                    <img src="images/stay-informed.png" alt="">
+                </div>
+            </div>
+            <div>
+                <ul class="all_wrap central_list" style="justify-content: flex-start;">
+                    <li class="all_wrap w50" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">查看所有防火牆、狀態和使用情況</p>
+                    </li>
+                    <li class="all_wrap w50" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">查看威脅活動和安全提醒</p>
+                    </li>
+                    <li class="all_wrap w50" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">獲取 VPN 和 SD-RED 設備狀態</p>
+                    </li>
+                    <li class="all_wrap w50" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">查看政策違規、高風險應用程式和活動</p>
+                    </li>
+                    <li class="all_wrap w50" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">獲取所有其他 Sophos 產品的狀態</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    
+        <section class="all_itemL font-white element_spaceL">
+            <div class="all_wrap">
+                <div class="toolimgM">
+                    <img src="images/take-control.png" alt="">
+                </div>
+                <div class="item_half">
+                    <h2 class="largetxt">掌控</h2>
+                    <p class="smalltxt">使用 Sophos Central，可以從任何位置輕鬆管理全功能群組防火牆。</p>
+                </div>
+            </div>
+            <div>
+                <ul class="all_wrap central_list" style="justify-content: flex-start;">
+                    <li class="all_wrap" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">群組管理<br>將防火牆分配到群組，同步政策和設置。</p>
+                    </li>
+                    <li class="all_wrap" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">備份管理<br>在雲端儲存防火牆配置備份用於保護安全。</p>
+                    </li>
+                    <li class="all_wrap" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">韌體更新和升級<br>輕鬆應用韌體更新，只需點擊幾次滑鼠。</p>
+                    </li>
+                    <li class="all_wrap" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">任務隊列<br>即時審計和監測網路變化。</p>
+                    </li>
+                    <li class="all_wrap" style="align-items: flex-start;">
+                        <i class="far fa-check-circle central_icon flex-1"></i>
+                        <p class="flex-2">Zero-touch零接觸部署<br>將新防火牆輕鬆部署到遠端地點，無需接觸。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="all_wrap">
+                <button class="btnlink"><a href="https://player.vimeo.com/video/476040265?width=800&height=450&iframe=true&portrait=0" target="_blank">親眼見證 Central Firewall Management&nbsp;&nbsp;<i class="far fa-play-circle"></i></a></button>
+            </div>
+        </section>
+    
+        <section class="all_itemL font-white element_spaceL">
+            <div class="element_spaceM">
+                <h2 class="largetxt">更深入查看</h2>
+                <p class="smalltxt">Sophos Central 通過分析、豐富的內建報告和靈活性的訂製工具，提供網路活動的更深入情報。</p>
+            </div>
+            <div class="all_wrap" style="align-items: flex-start;">
+                <div class="all_wrap item_half" style="align-items: flex-start;flex-wrap: nowrap;">
+                    <img src="images/help-question-network.svg" class="imgS" alt="">
+                    <div class="all_flex list_space" style="align-items: flex-start;">
+                        <h3 class="smalltxt" style="margin: 0;">解答一直困擾您的難題。</h3>
+    
+                        <ul class="all_wrap central_list" style="justify-content: flex-start;">
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">發現安全漏洞、可疑行為和其他需要更改政策的事件</p>
+                            </li>
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">始終滿足法規和內部合規性要求</p>
+                            </li>
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">快速檢索儲存的日誌資料，用於審計和鑑證用途</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="all_wrap item_half" style="align-items: flex-start;flex-wrap: nowrap;">
+                    <img src="images/analytics-graph-bar-1.svg" class="imgS" alt="">
+                    <div class="all_flex list_space" style="align-items: flex-start;">
+                        <h3 class="smalltxt" style="margin: 0;">用靈活自定義報告創建自己的案例</h3>
+    
+                        <ul class="all_wrap central_list" style="justify-content: flex-start;">
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">最重要主題的相關報告。</p>
+                            </li>
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">選擇豐富的類別選項。</p>
+                            </li>
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">應用篩選器和時間範圍。</p>
+                            </li>
+                            <li class="all_wrap" style="align-items: flex-start;">
+                                <i class="far fa-check-circle central_icon flex-1"></i>
+                                <p class="flex-2">選擇最適合您報告的圖表類型</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="all_wrap">
+                <button class="btnlink"><a href="https://player.vimeo.com/video/380354563?width=800&height=450&iframe=true&portrait=0" target="_blank">觀看自定義報告如何工作&nbsp;&nbsp;<i class="far fa-play-circle"></i></a></button>
+            </div>
+        </section>
+    
+        <section class="all_itemL font-white element_spaceL">
+            <h3 class="smalltxt element_spaceM">通過豐富的預定義報告顯示重要數據</h3>
+            <div class="all_wrap desktopsize">
+                <div class="tab flex-1">
+                    <button class="tablinks font-white" onclick="openCity(event, 'a01')" id="defaultOpen">帶寬使用</button>
+                    <button class="tablinks font-white" onclick="openCity(event, 'a02')">Web 使用情況</button>
+                    <button class="tablinks font-white" onclick="openCity(event, 'a03')">阻止的威嚇和事件</button>
+                    <button class="tablinks font-white" onclick="openCity(event, 'a04')">防火牆</button>
+                    <button class="tablinks font-white" onclick="openCity(event, 'a05')">地域活動</button>
+                    <button class="tablinks font-white" onclick="openCity(event, 'a06')">防病毒</button>
+                    <button class="tablinks font-white" onclick="openCity(event, 'a07')">入侵防禦系統</button>
+                </div>
+    
+                <div class="flex-2">
+                    <div id="a01" class="tabcontent toolimgL">
+                        <img src="images/Bandwidth.png" alt="">
+                    </div>
+                
+                    <div id="a02" class="tabcontent toolimgL">
+                        <img src="images/WebUsage.png" alt="">
+                    </div>
+                
+                    <div id="a03" class="tabcontent toolimgL">
+                        <img src="images/Threats-and-Events.png" alt="">
+                    </div>
+                        
+                    <div id="a04" class="tabcontent toolimgL">
+                        <img src="images/FirewallReport.png" alt="">
+                    </div>
+                
+                    <div id="a05" class="tabcontent toolimgL">
+                        <img src="images/GeoWidget.png" alt="">
+                    </div>
+                
+                    <div id="a06" class="tabcontent toolimgL">
+                        <img src="images/Antivirus-Report.png" alt="">
+                    </div>
+    
+                    <div id="a07" class="tabcontent toolimgL">
+                        <img src="images/IPSReport.png" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- mobile -->
+            <div class="accordion mobilesize">
+                <label for="tab1">帶寬使用</label>
+                <div>
+                  <input type="radio" name="tab" id="tab1">
+                  <div class="sophos_content">
+                      <br>
+                        <img src="images/Bandwidth.png" alt="">
+                    </div>
+                </div>
+                <label for="tab2">Web 使用情況</label>
+                <div>
+                  <input type="radio" name="tab" id="tab2">
+                  <div class="sophos_content">
+                    <br>
+                        <img src="images/WebUsage.png" alt="">
+                  </div>
+                </div>
+                <label for="tab3">阻止的威嚇和事件</label>
+                <div>
+                  <input type="radio" name="tab" id="tab3">
+                  <div class="sophos_content">
+                    <br>
+                        <img src="images/Threats-and-Events.png" alt="">
+                  </div>
+                </div>
+                <label for="tab4">防火牆</label>
+                <div>
+                  <input type="radio" name="tab" id="tab4">
+                  <div class="sophos_content">
+                    <br>
+                        <img src="images/FirewallReport.png" alt="">
+                  </div>
+                </div>
+                <label for="tab5">地域活動</label>
+                <div>
+                  <input type="radio" name="tab" id="tab5">
+                  <div class="sophos_content">
+                    <br>
+                        <img src="images/GeoWidget.png" alt="">
+                  </div>
+                </div>
+                <label for="tab6">防病毒</label>
+                <div>
+                  <input type="radio" name="tab" id="tab6">
+                  <div class="sophos_content">
+                    <br>
+                        <img src="images/Antivirus-Report.png" alt="">
+                  </div>
+                </div>
+                <label for="tab7">入侵防禦系統</label>
+                <div>
+                  <input type="radio" name="tab" id="tab7">
+                  <div class="sophos_content">
+                    <br>
+                        <img src="images/IPSReport.png" alt="">
+                  </div>
+                </div>
+            </div>
+    
+        </section>
+    
+        <section class="all_itemL font-white element_spaceL">
+            <div class="element_spaceM">
+                <h2 class="largetxt">擴展網路</h2>
+                <p class="smalltxt">Sophos Central 支持輕鬆部署新防火牆、SD-RED、無線和所有 Sophos 產品。</p>
+            </div>
+            <div class="all_wrap">
+                <div class="toolimgM">
+                    <img src="images/extend-your-network.png" alt="">
+                </div>
+                <div class="item_half">
+                    <ul class="all_wrap central_list" style="justify-content: flex-start;">
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">從 Sophos Central 將新 Sophos Firewall 部署到遠端地點，無需接觸。</p>
+                        </li>
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">部署零接觸 Sophos SD-RED 分支辦事處、家庭辦公室或 ICS 自動配置 VPN 設備，只需點擊幾次滑鼠。</p>
+                        </li>
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">輕鬆添加新的隨插即用 Sophos APX 無線接入點。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <section class="all_itemL font-white">
+            <div class="element_spaceM">
+                <h2 class="largetxt">擴大您的保護</h2>
+                <p class="smalltxt">Sophos Central 能夠擴充您的團隊實力，支持您通過單一控制台管理防火牆、端點、伺服器、行動裝置和其他 Sophos 產品，同時發揮 Synchronized Security 整合的優勢。</p>
+            </div>
+            <div class="all_wrap">
+                <div class="item_half">
+                    <ul class="all_wrap central_list" style="justify-content: flex-start;">
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">Security Heartbeat™ 安全心跳與您的防火牆即時共享端點運行狀況。</p>
+                        </li>
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">自動回應隔離受威脅系統，阻止威脅橫向轉移到裝置和資料丟失。</p>
+                        </li>
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">同步應用程式控制可識別 100% 經加密和規避的應用程式。</p>
+                        </li>
+                        <li class="all_wrap" style="align-items: flex-start;">
+                            <i class="far fa-check-circle central_icon flex-1"></i>
+                            <p class="flex-2">同步用戶 ID 方便與 Active Directory 整合。</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="toolimgM">
+                    <img src="images/sync-loop-xg.png" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function openCity(evt, aaa) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(aaa).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
